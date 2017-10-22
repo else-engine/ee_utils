@@ -9,7 +9,7 @@
 
 #include <type_traits>
 
-namespace EE {
+namespace ee {
 namespace tutil {
 
 /**
@@ -18,13 +18,6 @@ namespace tutil {
  */
 template <bool B, typename T = void>
 using eif = std::enable_if_t<B, T>;
-
-/**
- * is_arithmetic as in "can it be used for arithmetic?", so include reference to
- * arithmetic types.
- */
-template <typename T>
-constexpr bool is_arithmetic = std::is_arithmetic<std::decay_t<T>>::value;
 
 /**
  * all_same
@@ -47,4 +40,4 @@ template <typename... Ts>
 constexpr bool all_same = detail::all_same<Ts...>::value;
 
 } // namespace tutil
-} // namespace EE
+} // namespace ee
